@@ -37,7 +37,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
    * Open a dynamic dialog which allow the user to add a new product on the same page.
    */
   public addProduct(): void {
-    this.editProductDialogRef = this.dialogService.open(EditProductDialogComponent, { header: 'Add new product'});
+    this.editProductDialogRef = this.dialogService.open(
+      EditProductDialogComponent, 
+      { 
+        header: 'Add new product',
+        styleClass: 'edp-dialog',
+      }
+    );
+    this.editProductDialogRef.onClose.subscribe(data => console.log(data));
   }
 
   // #endregion

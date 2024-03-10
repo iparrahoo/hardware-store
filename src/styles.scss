@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$box-shadow-primary-color: #c7bbfa;
+$default-font-family: Roboto, Helvetica, sans-serif;
+$default-font-size: 0.875rem;
+$primary-color: #7254f3;
+$placeholder-color: #708da9;
+$transition-duration: 300ms;
+
+// #region Generals 
+
+label {
+    font-size: $default-font-size;
+}
+
+// #endregion
+
+// #region Forms
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-group.col-1-2 {
+    flex: 1 1 50%;
+}
+
+// #endregion
+
+// #region PrimeNG Generals
+
+.p-component {
+    font-family: $default-font-family;
+}
+
+// #endregion
+
+// #region PrimeNG Buttons
+
+.p-button {
+    font-size: $default-font-size;
+}
+
+// #endregion
+
+// #region PrimeNG Checkboxes
+
+.p-checkbox .p-checkbox-box {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.p-checkbox .p-checkbox-box .p-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+// #endregion
+
+// #region PrimeNG Dropdowns
+
+.p-dropdown {
+    width: 100%;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item,
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item-group {
+    padding: 0.5rem 1.125rem;
+    font-size: $default-font-size;
+}
+
+// #endregion
+
+// #region PrimeNG Dialogs
+
+.p-dialog .p-dialog-header .p-dialog-title {
+    font-size: 1rem;
+}
+
+// #endregion
+
+// #region PrimeNG Editors
+
+.p-editor-container {
+    border-radius: 6px;
+    transition: box-shadow $transition-duration;
+}
+
+.p-editor-container:focus-within {
+    box-shadow: 0 0 0 1px $box-shadow-primary-color;
+}
+
+.p-editor-container .p-editor-toolbar.ql-snow,
+.p-editor-container .p-editor-content.ql-snow {
+    transition: border-color $transition-duration;
+}
+
+.p-editor-container:focus-within .p-editor-toolbar.ql-snow,
+.p-editor-container:hover .p-editor-toolbar.ql-snow {
+    border-top-color: $primary-color;
+    border-left-color: $primary-color;
+    border-right-color: $primary-color;
+}
+
+.p-editor-container:focus-within .p-editor-content.ql-snow,
+.p-editor-container:hover .p-editor-content.ql-snow {
+    border-color: $primary-color;
+}
+
+.p-editor-container .ql-editor.ql-blank::before {
+    color: $placeholder-color;
+    font-family: $default-font-family;
+    font-style: normal;
+}
+
+.p-editor-container .ql-container {
+    font-size: $default-font-size;
+}
+
+// #endregion
+
+// #region PrimeNG Icons
+
+.pi {
+    font-size: $default-font-size;
+}
+
+.p-icon {
+    width: $default-font-size;
+    height: $default-font-size;
+}
+
+// #endregion
+
+// #region PrimeNG Inputs
+
+.p-inputtext {
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+}
+
+// #endregion
+
+// #region PrimeNG MultiSelects
+
+.p-multiselect {
+    width: 100%;
+}
+
+.p-multiselect .p-multiselect-label.p-placeholder {
+    font-size: $default-font-size;
+}
+
+.p-multiselect-panel .p-multiselect-header,
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    padding: 0.5rem 1.125rem
+}
+
+// #endregion

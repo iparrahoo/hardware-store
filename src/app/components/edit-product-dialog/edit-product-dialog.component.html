@@ -4,16 +4,99 @@
         
         <div class="form-edp__fields">
 
+            <div class="form-group">
+                <label>Name</label>
+                <input pInputText placeholder="Enter product name" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <p-editor class="edp-editor" placeholder="Enter product description"></p-editor>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-1-2">
+                    <label>Categories</label>
+                    <p-multiSelect appendTo="body" 
+                                   placeholder="Select product categories" 
+                                   styleClass="edp-category"
+                                   [options]="categories" 
+                                   [filter]="false">
+                        <ng-template let-categories pTemplate="selectedItems">
+                            <div *ngIf="!categories || categories.length === 0">Select product categories</div>
+                            <div class="edp-category__option-item" *ngFor="let category of categories; let last = last">
+                                <img class="edp-category__icone" src="assets/svgs/{{category.icon}}"/>
+                                <div class="edp-category__label">{{category.name}}{{last ? '' : ','}}</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-category pTemplate="item">
+                            <div class="edp-category__option-item">
+                                <img class="edp-category__icone" src="assets/svgs/{{category.icon}}"/>
+                                <div class="edp-category__label">{{category.name}}</div>
+                            </div>
+                        </ng-template>
+                    </p-multiSelect>
+                </div>
+
+                <div class="form-group col-1-2">
+                    <label>Unit</label>
+                    <p-dropdown appendTo="body" 
+                                name="unit"
+                                optionGroupChildren="group"
+                                placeholder="Select product unit"
+                                [group]="true" 
+                                [options]="units"
+                                [(ngModel)]="selectedUnit">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="edp-unit__selected" *ngIf="selectedUnit">
+                                <img class="edp-unit__icone" src="assets/svgs/{{selectedUnit.icon}}"/>
+                                <div class="edp-unit__label">{{selectedUnit.label}} ({{selectedUnit.prefix}})</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-unit pTemplate="group">
+                            <div class="edp-unit__group">
+                                <img class="edp-unit__icone" src="assets/svgs/{{unit.icon}}"/>
+                                <div class="edp-unit__label">{{unit.label}}</div>
+                            </div>
+                        </ng-template>
+                        <ng-template let-unit pTemplate="item">
+                            <div class="edp-unit__label">{{unit.label}} ({{unit.prefix}})</div>
+                        </ng-template>
+                    </p-dropdown>
+                </div>
+
+            </div>
         </div>
 
         <div class="form-edp__dropzone">
-            
+            <div class="form-group">
+                <label>Product images</label>
+                <p-fileUpload accept="image/*" 
+                              chooseLabel="Choose" 
+                              [maxFileSize]="1000000" 
+                              [multiple]="true"
+                              [showUploadButton]="false">
+                </p-fileUpload>
+            </div>
+           
         </div>
 
     </form>
 
+    <!-- Add & cancel buttons. -->
     <div class="edp__operation">
-
+        <p-button class="edp-operation__button" 
+                  icon="pi pi-times" 
+                  label="Cancel" 
+                  severity="danger" 
+                  [outlined]="true">
+        </p-button>
+        <p-button class="edp-operation__button" 
+                  icon="pi pi-plus" 
+                  label="Add product" 
+                  severity="success">
+        </p-button>
     </div>
 
 </div>

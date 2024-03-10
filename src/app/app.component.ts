@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,15 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'hardware-store';
+export class AppComponent implements OnInit {
+  
+  constructor(private primeConfig: PrimeNGConfig) {}
+
+  /**
+   * Set ripple effects true.
+   */
+  public ngOnInit(): void {
+    this.primeConfig.ripple = true;
+  }
+
 }

@@ -1,0 +1,84 @@
+$border-color: #d3dbe3;
+$default-font-size: 0.875rem;
+
+::ng-deep {
+    .edp-dialog.p-dialog .p-dialog-content {
+        padding: 0;
+    }
+
+    .edp-category.p-multiselect .p-multiselect-label {
+        display: inline-flex;
+        flex-wrap: wrap;
+        column-gap: 0.5rem;
+        row-gap: 0.25rem;
+    }
+}
+
+.epd__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-edp {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1.5rem 0.25rem 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.form-edp__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edp-editor::ng-deep {
+    .ql-code-block, 
+    .ql-image, 
+    .ql-clean { 
+        display: none; 
+    }
+} 
+
+.edp-category__option-item {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.edp-category__icone {
+    width: $default-font-size;
+    height: auto;
+}
+
+.edp-category__label {
+    font-size: $default-font-size;
+}
+
+.edp-unit__selected,
+.edp-unit__group {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.edp-unit__group {
+    font-weight: bold;
+}
+
+.edp-unit__icone {
+    width: $default-font-size;
+    height: auto;
+}
+
+.edp-unit__label {
+    font-size: $default-font-size;
+}
+
+.edp__operation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+}
